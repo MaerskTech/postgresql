@@ -1,6 +1,6 @@
 name: setting-default-labels
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   schedule:
   - cron: "0 0/3 * * *"
@@ -13,7 +13,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-          
+
       - uses: actions/stale@v3
         name: Setting issue as idle
         with:
@@ -24,7 +24,7 @@ jobs:
           days-before-close: -1
           operations-per-run: 100
           exempt-issue-labels: 'backlog'
-          
+
       - uses: actions/stale@v3
         name: Setting PR as idle
         with:
